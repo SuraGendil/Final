@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tambah.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+    <style>
+        /* Background color for cells with content "Terpakai" */
+        #jadwal-body td[data-content="Terpakai"] {
+            background-color: red !important;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Style for the popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Style for the booking button */
+        #booking-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #booking-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Style for the WhatsApp booking button */
+        #whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #whatsapp-button:hover {
+            background-color: #1EBE5B;
+        }
+
+        /* Styling untuk input dengan atribut list */
+        input[list] {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[list]:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        /* Styling untuk input jumlah peserta */
+        input[type="number"] {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        /* Untuk penampilan yang konsisten di berbagai browser */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            display: none;
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Placeholder styling */
+        input[type="number"]::placeholder {
+            color: #888;
+            /* Placeholder color */
+        }
+
+        input[type="number"]:placeholder-shown {
+            color: #888;
+            /* Placeholder color */
+        }
+
+        /* Hover effect */
+        input[type="number"]:hover {
+            border-color: #45a049;
+        }
+
+        /* Active effect */
+        input[type="number"]:active {
+            border-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========  SideBar ======= -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png') }}" alt="FPMIPA"
+                                class="logo-img">
+                        </span>
+                        <span class="title-brand">Jadwal <br>
+                            <b>FPMIPA UPI</b>
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/home">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/diagram">
+                        <span class="icon">
+                            <ion-icon name="duplicate-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dashboard">
+                        <span class="icon">
+                            <ion-icon name="podium-outline"></ion-icon>
+                        </span>
+                        <span class="title">Recap FPMIPA</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="darkModeToggle" onclick="toggleDarkMode()">
+                        <span class="icon">
+                            <ion-icon name="contrast-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dark Mode</span>
+                    </button>
+                </li>
+            </ul>
+            <footer>
+                <!-- Tautan Sosial Media -->
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/hanifahah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="https://github.com/HanifahAH01" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/hah_hanifah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="http://Wa.me/+6281364986912" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="hanifah al humaira#1327" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </a>
+                </div>
+                <p>&copy; 2024 FPMIPA UPI. Dibuat oleh Hanifah.</p>
+            </footer>
+        </div>
+
+        <!-- ============== Main ============== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="grid-outline"></ion-icon>
+                </div>
+            </div>
+
+            <!-- ==========Details List=========== -->
+            <!-- Details -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Booking Ruang Kelas</h2>
+                        <div class="btn-group">
+                            <a href="/diagram" class="btn-primary">Ruang Kelas</a>
+                        </div>
+                    </div>
+
+                    <!-- Form Report Section -->
+                    <div id="report-section" class="report-section">
+                        <form action="/submit_booking" method="POST">
+                            <label for="nama_pemohon">Nama Pemohon:</label>
+                            <textarea id="nama_pemohon" name="nama_pemohon" required></textarea>
+
+                            <label for="nama_ruangan">Nama Ruangan:</label>
+                            <input list="room-list" id="nama_ruangan" name="nama_ruangan" oninput="filterRooms()"
+                                required>
+                            <datalist id="room-list">
+                                {% for room in rooms %}
+                                <option value="{{ room[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
+
+                            <label for="hari">Hari:</label>
+                            <select id="hari" name="hari" required>
+                                <option value="senin">Senin</option>
+                                <option value="selasa">Selasa</option>
+                                <option value="rabu">Rabu</option>
+                                <option value="kamis">Kamis</option>
+                                <option value="jumat">Jumat</option>
+                                <option value="sabtu">Sabtu</option>
+                                <option value="minggu">Minggu</option>
+                            </select>
+
+                            <label for="tanggal">Tanggal:</label>
+                            <input type="date" id="tanggal" name="tanggal" required>
+
+                            <br>
+                            <br>
+
+                            <label for="waktu_awal">Dari Pukul:</label>
+                            <input list="waktu-list" id="waktu_awal" name="waktu_awal" oninput="filterWaktu()" required>
+                            <datalist id="waktu-list">
+                                {% for waktu in waktu_data %}
+                                <option value="{{ waktu[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
+
+                            <label for="waktu_akhir">Hingga Pukul:</label>
+                            <input list="waktu-list" id="waktu_akhir" name="waktu_akhir" oninput="filterWaktu()"
+                                required>
+                            <datalist id="waktu-list">
+                                {% for waktu in waktu_data %}
+                                <option value="{{ waktu[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
+
+                            <label for="nama_kegiatan">Nama Kegiatan:</label>
+                            <textarea id="nama_kegiatan" name="nama_kegiatan" required></textarea>
+
+                            <label for="jumlah_peserta">Jumlah Peserta:</label>
+                            <input type="number" id="jumlah_peserta" name="jumlah_peserta" required>
+
+                            <br>
+                            <br>
+                            <input type="submit" value="Booking">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======== Script ======== -->
+        <script src="{{ url_for('static', filename='js/Ruangkelas.js') }}"></script>
+
+        <!-- ======== Ionicons ======== -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,882 @@
+[
+    {
+        "Span": "Lab Pembelajaran Kimia B 106",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Komputer Matematika 1 E 305",
+        "Total Senin": 3,
+        "Total Selasa": 1,
+        "Total Rabu": 3,
+        "Total Kamis": 1,
+        "Total Jumat": 3,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Komputer Matematika 2 E 306",
+        "Total Senin": 2,
+        "Total Selasa": 1,
+        "Total Rabu": 3,
+        "Total Kamis": 3,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Komputer Matematika 3 C 104",
+        "Total Senin": 1,
+        "Total Selasa": 3,
+        "Total Rabu": 3,
+        "Total Kamis": 0,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Praktikum C 201",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Kecerdasan Artifisial C 202",
+        "Total Senin": 1,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab. Sistem Jaringan dan Teknik Komputer C 203",
+        "Total Senin": 0,
+        "Total Selasa": 2,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Umum C 204",
+        "Total Senin": 1,
+        "Total Selasa": 1,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Digital",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Smart learning Environment C 206",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Rekayasa Perangkat Lunak dan Manajemen Invormasi C 207",
+        "Total Senin": 0,
+        "Total Selasa": 1,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Multimedia Ilkom C 306",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 1,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Struktur Tumbuhan N",
+        "Total Senin": 2,
+        "Total Selasa": 3,
+        "Total Rabu": 3,
+        "Total Kamis": 3,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Struktur Tumbuhan",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Fisiologi N 118",
+        "Total Senin": 0,
+        "Total Selasa": 2,
+        "Total Rabu": 0,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Fisiologi N 118",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Struktur Hewan N 205",
+        "Total Senin": 0,
+        "Total Selasa": 3,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Microbiologi N 210",
+        "Total Senin": 0,
+        "Total Selasa": 3,
+        "Total Rabu": 3,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Bumi Antariksa N 220",
+        "Total Senin": 2,
+        "Total Selasa": 3,
+        "Total Rabu": 4,
+        "Total Kamis": 3,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Elektronika N 305",
+        "Total Senin": 1,
+        "Total Selasa": 2,
+        "Total Rabu": 1,
+        "Total Kamis": 0,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Fisika Dasar N 309",
+        "Total Senin": 1,
+        "Total Selasa": 0,
+        "Total Rabu": 2,
+        "Total Kamis": 3,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Fisika Lanjut N 313",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Fisika Material N 318",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Pengajaran Matematika E 302",
+        "Total Senin": 1,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 1,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Kimia dasar dan Analiktik N 405",
+        "Total Senin": 2,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Proses Belajar dan Mengajar Kimia N 410",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Kimia Fisik Dan Anorganik N 505",
+        "Total Senin": 2,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 1,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Kimia Organik Dan Bio KIMIA N 509",
+        "Total Senin": 2,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Kimia Instrumen N 519",
+        "Total Senin": 0,
+        "Total Selasa": 2,
+        "Total Rabu": 0,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Pembelajaran Fisika B 108",
+        "Total Senin": 1,
+        "Total Selasa": 1,
+        "Total Rabu": 0,
+        "Total Kamis": 1,
+        "Total Jumat": 4,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab. Biologi IPSE B 201",
+        "Total Senin": 0,
+        "Total Selasa": 1,
+        "Total Rabu": 1,
+        "Total Kamis": 1,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Physics Ipse B",
+        "Total Senin": 1,
+        "Total Selasa": 0,
+        "Total Rabu": 1,
+        "Total Kamis": 3,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Multimedia Ipse B 208",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Chemistry ipse B 213",
+        "Total Senin": 2,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Riset Bioteknologi 1 B 307",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Riset Bioteknologi 2 B 311",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Pembelajaran Matematika B 314",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Riset Kimia Makanan B 401",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Hayati Kimia B 403",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Riset Unggulan Kimia B 404",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Instrumentasi Fisika B 407",
+        "Total Senin": 1,
+        "Total Selasa": 1,
+        "Total Rabu": 0,
+        "Total Kamis": 2,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Komputasi Fisika B 408",
+        "Total Senin": 2,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Rekayasa Teknologi Fisika B 410",
+        "Total Senin": 1,
+        "Total Selasa": 1,
+        "Total Rabu": 1,
+        "Total Kamis": 1,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Kimia Material dan Hayati B 413",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Riset Kimia Lingkungan B 414",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Laboratorium Digital C",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Ekologi",
+        "Total Senin": 2,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab Ekologi",
+        "Total Senin": 2,
+        "Total Selasa": 0,
+        "Total Rabu": 1,
+        "Total Kamis": 2,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "LaB Botani",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E",
+        "Total Senin": 3,
+        "Total Selasa": 2,
+        "Total Rabu": 3,
+        "Total Kamis": 2,
+        "Total Jumat": 3,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas E",
+        "Total Senin": 3,
+        "Total Selasa": 1,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 1
+    },
+    {
+        "Span": "Ruang Kelas S",
+        "Total Senin": 3,
+        "Total Selasa": 3,
+        "Total Rabu": 3,
+        "Total Kamis": 3,
+        "Total Jumat": 3,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas S",
+        "Total Senin": 2,
+        "Total Selasa": 3,
+        "Total Rabu": 1,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas S",
+        "Total Senin": 1,
+        "Total Selasa": 1,
+        "Total Rabu": 1,
+        "Total Kamis": 1,
+        "Total Jumat": 1,
+        "Total Sabtu": 1,
+        "Total Minggu": 1
+    },
+    {
+        "Span": "Ruang Kelas S",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 1,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas S",
+        "Total Senin": 1,
+        "Total Selasa": 1,
+        "Total Rabu": 1,
+        "Total Kamis": 1,
+        "Total Jumat": 1,
+        "Total Sabtu": 1,
+        "Total Minggu": 1
+    },
+    {
+        "Span": "Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E",
+        "Total Senin": 2,
+        "Total Selasa": 3,
+        "Total Rabu": 2,
+        "Total Kamis": 3,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B 113 S2",
+        "Total Senin": 3,
+        "Total Selasa": 3,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B 114 S2",
+        "Total Senin": 1,
+        "Total Selasa": 1,
+        "Total Rabu": 1,
+        "Total Kamis": 1,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B 115 S2",
+        "Total Senin": 4,
+        "Total Selasa": 4,
+        "Total Rabu": 4,
+        "Total Kamis": 4,
+        "Total Jumat": 3,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B",
+        "Total Senin": 3,
+        "Total Selasa": 3,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B 210",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B 210",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 1,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B",
+        "Total Senin": 3,
+        "Total Selasa": 3,
+        "Total Rabu": 3,
+        "Total Kamis": 4,
+        "Total Jumat": 3,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B",
+        "Total Senin": 3,
+        "Total Selasa": 3,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas B",
+        "Total Senin": 3,
+        "Total Selasa": 3,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 1,
+        "Total Sabtu": 3,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 3,
+        "Total Rabu": 0,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 2,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 3,
+        "Total Selasa": 2,
+        "Total Rabu": 3,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 3,
+        "Total Rabu": 3,
+        "Total Kamis": 3,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 4,
+        "Total Sabtu": 1,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 1,
+        "Total Selasa": 1,
+        "Total Rabu": 0,
+        "Total Kamis": 1,
+        "Total Jumat": 1,
+        "Total Sabtu": 1,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 1,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 1,
+        "Total Sabtu": 1,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 3,
+        "Total Selasa": 2,
+        "Total Rabu": 3,
+        "Total Kamis": 1,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 1,
+        "Total Kamis": 1,
+        "Total Jumat": 1,
+        "Total Sabtu": 2,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 1,
+        "Total Kamis": 1,
+        "Total Jumat": 2,
+        "Total Sabtu": 1,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 4,
+        "Total Selasa": 4,
+        "Total Rabu": 3,
+        "Total Kamis": 4,
+        "Total Jumat": 2,
+        "Total Sabtu": 2,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 1,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Kelas C",
+        "Total Senin": 2,
+        "Total Selasa": 2,
+        "Total Rabu": 2,
+        "Total Kamis": 2,
+        "Total Jumat": 2,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Microteaching Biologi B 309",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Lab STEAM Model C 208",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Smart Class Fpmipa E 210",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Smartclass/ Digital Lab Kerjasama Okayama University",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    },
+    {
+        "Span": "Ruang Smart Classroom NTNU Taiwan",
+        "Total Senin": 0,
+        "Total Selasa": 0,
+        "Total Rabu": 0,
+        "Total Kamis": 0,
+        "Total Jumat": 0,
+        "Total Sabtu": 0,
+        "Total Minggu": 0
+    }
+]

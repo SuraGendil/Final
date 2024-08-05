@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>FPMIPA UPI</title>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+
+  <style>
+    .button-group-scroll {
+      position: fixed;
+      /* Menjadikan elemen tetap */
+      top: 20px;
+      /* Jarak dari atas halaman */
+      right: 20px;
+      /* Jarak dari sisi kanan halaman */
+      z-index: 1000;
+      /* Menempatkan elemen di atas elemen lain */
+      display: flex;
+      /* Mengatur elemen anak secara horizontal */
+      gap: 10px;
+      /* Jarak antar tombol */
+    }
+
+    .button-group-scroll button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      /* Mencegah teks tombol membungkus */
+    }
+
+    .button-group-scroll button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <!-- Fonts and icons -->
+  <script src="{{ url_for('static', filename='plugin/webfont/webfont.min.js') }}"></script>
+  <script>
+    WebFont.load({
+      google: { families: ["Public Sans:300,400,500,600,700"] },
+      custom: {
+        families: [
+          "Font Awesome 5 Solid",
+          "Font Awesome 5 Regular",
+          "Font Awesome 5 Brands",
+          "simple-line-icons",
+        ],
+        urls: ["{{ url_for('static', filename='css/fonts.min.css') }}"],
+      },
+      active: function () {
+        sessionStorage.fonts = true;
+      },
+    });
+
+    function runKapasitas() {
+      $.ajax({
+        url: '/run-kapasitas',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    };
+
+    function runJadwal() {
+      $.ajax({
+        url: '/run-jadwal',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
+
+    function runDataJadwal() {
+      $.ajax({
+        url: 'run-data-jadwal',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
+
+    function runDataRekap() {
+      $.ajax({
+        url: 'run-data-rekap',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
+
+    function runemptyJadwal() {
+      $.ajax({
+        url: 'run-empty-jadwal',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
+
+    function runemptyRekapPenggunaan() {
+      $.ajax({
+        url: 'run-empty-rekap-penggunaan',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
+  </script>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins.min.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/kaiadmin.min.css') }}" />
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar" data-background-color="dark">
+      <div class="sidebar-logo">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="dark">
+          <a href="/admin" class="logo">
+            <img src="{{ url_for('static', filename='images/Group_30.png') }}" alt="navbar brand" class="navbar-brand"
+              height="20" />
+          </a>
+          <div class="nav-toggle">
+            <button class="btn btn-toggle toggle-sidebar">
+              <i class="gg-menu-right"></i>
+            </button>
+            <button class="btn btn-toggle sidenav-toggler">
+              <i class="gg-menu-left"></i>
+            </button>
+          </div>
+          <button class="topbar-toggler more">
+            <i class="gg-more-vertical-alt"></i>
+          </button>
+        </div>
+        <!-- End Logo Header -->
+      </div>
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <ul class="nav nav-secondary">
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#tables">
+                <i class="fas fa-table"></i>
+                <p>Halaman User</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="tables">
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="/home-admin">
+                      <span class="sub-item">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recap-admin">
+                      <span class="sub-item">Recap</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a href="/admin" class="logo">
+              <img src="{{ url_for('static', filename='images/Group_30.png') }}" alt="navbar brand" class="navbar-brand"
+                height="20" />
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button type="submit" class="btn btn-search pe-1">
+                    <i class="fa fa-search search-icon"></i>
+                  </button>
+                </div>
+                <input type="text" placeholder="Search ..." class="form-control" />
+              </div>
+            </nav>
+
+            <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+              <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false" aria-haspopup="true">
+                  <i class="fa fa-search"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-search animated fadeIn">
+                  <form class="navbar-left navbar-form nav-search">
+                    <div class="input-group">
+                      <input type="text" placeholder="Search ..." class="form-control" />
+                    </div>
+                  </form>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-envelope"></i>
+                </a>
+                <ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
+                  <li>
+                    <div class="dropdown-title d-flex justify-content-between align-items-center">
+                      Messages
+                      <a href="#" class="small">Mark all as read</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="message-notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="{{ url_for('static', filename='images/profile-1.jpg') }}" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="subject">Jimmy Denis</span>
+                            <span class="block"> How are you ? </span>
+                            <span class="time">5 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="{{ url_for('static', filename='images/profile-2.jpg') }}" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="subject">Chad</span>
+                            <span class="block"> Ok, Thanks ! </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="{{ url_for('static', filename='images/profile-3.jpg') }}" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="subject">Jhon Doe</span>
+                            <span class="block">
+                              Ready for the meeting today...
+                            </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="{{ url_for('static', filename='images/profile-4.jpg') }}" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="subject">Talha</span>
+                            <span class="block"> Hi, Apa Kabar ? </span>
+                            <span class="time">17 minutes ago</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">See all messages<i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-bell"></i>
+                  <span class="notification">4</span>
+                </a>
+                <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+                  <li>
+                    <div class="dropdown-title">
+                      You have 4 new notification
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+                        <a href="#">
+                          <div class="notif-icon notif-primary">
+                            <i class="fa fa-user-plus"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> New user registered </span>
+                            <span class="time">5 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-icon notif-success">
+                            <i class="fa fa-comment"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block">
+                              Rahmad commented on Admin
+                            </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="{{ url_for('static', filename='images/profile-1.jpg') }}" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="block">
+                              Reza send messages to you
+                            </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-icon notif-danger">
+                            <i class="fa fa-heart"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> Farrah liked Admin </span>
+                            <span class="time">17 minutes ago</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item topbar-user dropdown hidden-caret">
+                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                  <div class="avatar-sm">
+                    <img src="{{ url_for('static', filename='images/profile-2.jpg') }}" alt="..."
+                      class="avatar-img rounded-circle" />
+                  </div>
+                  <span class="profile-username">
+                    <span class="op-7">Hi,</span>
+                    <span class="fw-bold">Hanifah</span>
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                  <div class="dropdown-user-scroll scrollbar-outer">
+                    <li>
+                      <div class="user-box">
+                        <div class="avatar-lg">
+                          <img src="{{ url_for('static', filename='images/profile-3.jpg') }}" alt="image profile"
+                            class="avatar-img rounded" />
+                        </div>
+                        <div class="u-text">
+                          <h4>Hizrian</h4>
+                          <p class="text-muted">hello@example.com</p>
+                          <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">My Profile</a>
+                      <a class="dropdown-item" href="#">My Balance</a>
+                      <a class="dropdown-item" href="#">Inbox</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Account Setting</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/logout">Logout</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+
+      <div class="container">
+        <div class="page-inner">
+          <div class="page-header">
+            <h3 class="fw-bold mb-3">Monitoring Jadwal FPMIPA</h3>
+            <ul class="breadcrumbs mb-3">
+              <li class="nav-home">
+                <a href="#">
+                  <i class="icon-home"></i>
+                </a>
+              </li>
+              <li class="separator">
+                <i class="icon-arrow-right"></i>
+              </li>
+              <li class="nav-item">
+                <a href="#">Tables</a>
+              </li>
+              <li class="separator">
+                <i class="icon-arrow-right"></i>
+              </li>
+              <li class="nav-item">
+                <a href="#">Datatables</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Button Group Scroll -->
+          <div class="button-group-scroll" id="buttonGroupScroll">
+            <button onclick="scrollToSection('section1')">Section 1</button>
+            <button onclick="scrollToSection('section2')">Section 2</button>
+            <button onclick="scrollToSection('section3')">Section 3</button>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h4 class="card-title">Jadwal</h4>
+                    <div class="d-flex justify-content-end">
+                      <button class="btn btn-primary btn-round ms-2" onclick="runDataJadwal()">Run Sinkron
+                        Jadwal</button>
+                      <button class="btn btn-primary btn-round ms-2" onclick="runemptyJadwal()">Run TRUNCATE
+                        Jadwal</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table id="basic-datatables" class="display table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th>Nama Ruangan</th>
+                          <th>Senin</th>
+                          <th>Status Senin</th>
+                          <th>Selasa</th>
+                          <th>Status Selasa</th>
+                          <th>Rabu</th>
+                          <th>Status Rabu</th>
+                          <th>Kamis</th>
+                          <th>Status Kamis</th>
+                          <th>Jumat</th>
+                          <th>Status Jumat</th>
+                          <th>Sabtu</th>
+                          <th>Status Sabtu</th>
+                          <th>Minggu</th>
+                          <th>Status Minggu</th>
+                          <!-- <th>action</th> -->
+                          <th style="width: 10%">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for Jadwal in Jadwal %}
+                        <tr>
+                          <td>{{ Jadwal[1] }}</td>
+                          <td>{{ Jadwal[2] }}</td>
+                          <td>{{ Jadwal[3] }}</td>
+                          <td>{{ Jadwal[4] }}</td>
+                          <td>{{ Jadwal[5] }}</td>
+                          <td>{{ Jadwal[6] }}</td>
+                          <td>{{ Jadwal[7] }}</td>
+                          <td>{{ Jadwal[8] }}</td>
+                          <td>{{ Jadwal[9] }}</td>
+                          <td>{{ Jadwal[10] }}</td>
+                          <td>{{ Jadwal[11] }}</td>
+                          <td>{{ Jadwal[12] }}</td>
+                          <td>{{ Jadwal[13] }}</td>
+                          <td>{{ Jadwal[14] }}</td>
+                          <td>{{ Jadwal[15] }}</td>
+                          <td>
+                            <div class="form-button-action">
+                              <a href="{{ url_for('edit', No=Jadwal[0]) }}" class="btn btn-link btn-primary btn-lg"
+                                data-bs-toggle="tooltip" title="Edit Task">
+                                <i class="fa fa-edit"></i>
+                              </a>
+                              <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger"
+                                data-original-title="Remove">
+                                <i class="fa fa-times"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <div class="d-flex align-items-center">
+                    <h4 class="card-title">Rekap penggunaan Ruangan</h4>
+                    <div class="ms-auto">
+                      <button class="btn btn-primary btn-round ms-2" onclick="runDataRekap()">Run Sinkron
+                        Rekap</button>
+                      <button class="btn btn-primary btn-round ms-2" onclick="runemptyRekapPenggunaan()">Run TRUNCATE
+                        Rekap</button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="add-row" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Ruang Kelas</th>
+                            <th>Program Studi</th>
+                            <th>Jumlah</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for prodi in prodi %}
+                          <tr>
+                            <td>{{ prodi[0] }}</td>
+                            <td>{{ prodi[1] }}</td>
+                            <td>{{ prodi[2] }}</td>
+                            <td>{{ prodi[3] }}</td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center">
+                      <h4 class="card-title">Booking</h4>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="add-row" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>Nama Pemohon</th>
+                            <th>Nama Ruangan</th>
+                            <th>Hari</th>
+                            <th>Tanggal</th>
+                            <th>Waktu Awal</th>
+                            <th>Waktu Akhir</th>
+                            <th>Tujuan Booking</th>
+                            <th>Jumlah Peserta</th>
+                            <th>Status</th>
+                            <th>Keterangan Status</th>
+                            <th style="width: 10%">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for booking in booking %}
+                          <tr>
+                            <td>{{ booking[1] }}</td>
+                            <td>{{ booking[2] }}</td>
+                            <td>{{ booking[3] }}</td>
+                            <td>{{ booking[4] }}</td>
+                            <td>{{ booking[5] }}</td>
+                            <td>{{ booking[6] }}</td>
+                            <td>{{ booking[7] }}</td>
+                            <td>{{ booking[8] }}</td>
+                            <td>{{ booking[9] }}</td>
+                            <td>{{ booking[10] }}</td>
+                            <td>
+                              <div class="form-button-action">
+                                <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal"
+                                  data-bs-target="#editModal{{ booking[0] }}">
+                                  <i class="fa fa-edit" data-bs-toggle="tooltip" title="Edit Task"></i>
+                                </button>
+                                <button type="button" class="btn btn-link btn-danger" data-bs-toggle="modal"
+                                  data-bs-target="#deleteModal{{ booking[0] }}" title="Remove">
+                                  <i class="fa fa-times"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <!-- Modal for Edit -->
+                          <div class="modal fade" id="editModal{{ booking[0] }}" tabindex="-1"
+                            aria-labelledby="editModalLabel{{ booking[0] }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="editModalLabel{{ booking[0] }}">Edit Status dan Keterangan
+                                    Status</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form action="{{ url_for('edit_booking', No=booking[0]) }}" method="POST">
+                                    <div class="form-group">
+                                      <label for="status">Status</label>
+                                      <select class="form-control" id="status" name="status">
+                                        {% for status in statuses %}
+                                        <option value="{{ status[0] }}" {% if booking[9]==status[1] %}selected{% endif
+                                          %}>
+                                          {{ status[1] }}</option>
+                                        {% endfor %}
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="keterangan_status">Keterangan Status</label>
+                                      <input type="text" class="form-control" id="keterangan_status"
+                                        name="keterangan_status" value="{{ booking[10] }}">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Modal for Delete Confirmation -->
+                          <div class="modal fade" id="deleteModal{{ booking[0] }}" tabindex="-1"
+                            aria-labelledby="deleteModalLabel{{ booking[0] }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="deleteModalLabel{{ booking[0] }}">Hapus Booking</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  Apakah Anda yakin ingin menghapus booking ini?
+                                </div>
+                                <div class="modal-footer">
+                                  <form action="{{ url_for('delete_booking', No=booking[0]) }}" method="POST">
+                                    <button type="button" class="btn btn-secondary"
+                                      data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center">
+                      <h4 class="card-title">Report</h4>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <!-- Modal -->
+                    <div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header border-0">
+                            <h5 class="modal-title">
+                              <span class="fw-mediumbold"> New</span>
+                              <span class="fw-light"> Row </span>
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p class="small">
+                              Create a new row using this form, make sure you
+                              fill them all
+                            </p>
+                            <form>
+                              <div class="row">
+                                <div class="col-sm-12">
+                                  <div class="form-group form-group-default">
+                                    <label>Name</label>
+                                    <input id="addName" type="text" class="form-control" placeholder="fill name" />
+                                  </div>
+                                </div>
+                                <div class="col-md-6 pe-0">
+                                  <div class="form-group form-group-default">
+                                    <label>Position</label>
+                                    <input id="addPosition" type="text" class="form-control"
+                                      placeholder="fill position" />
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-group form-group-default">
+                                    <label>Office</label>
+                                    <input id="addOffice" type="text" class="form-control" placeholder="fill office" />
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer border-0">
+                            <button type="button" id="addRowButton" class="btn btn-primary">
+                              Add
+                            </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="table-responsive">
+                      <table id="add-row" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>Nama Ruangan</th>
+                            <th>Hari</th>
+                            <th>Waktu</th>
+                            <th>Alasan</th>
+                            <th>Tindakan</th>
+                            <th style="width: 10%">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for laporan in laporan %}
+                          <tr>
+                            <td>{{ laporan[1] }}</td>
+                            <td>{{ laporan[2] }}</td>
+                            <td>{{ laporan[3] }}</td>
+                            <td>{{ laporan[4] }}</td>
+                            <td>{{ laporan[5] }}</td>
+                            <td>
+                              <div class="form-button-action">
+                                <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal"
+                                  data-bs-target="#editTindakanModal{{ laporan[0] }}">
+                                  <i class="fa fa-edit" data-bs-toggle="tooltip" title="Edit Tindakan"></i>
+                                </button>
+                                <button type="button" class="btn btn-link btn-danger" data-bs-toggle="modal"
+                                  data-bs-target="#deleteModallaporan{{ laporan[0] }}" title="Remove">
+                                  <i class="fa fa-times"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <!-- Modal for Edit -->
+                          <div class="modal fade" id="editTindakanModal{{ laporan[0] }}" tabindex="-1"
+                            aria-labelledby="editTindakanModalLabel{{ laporan[0] }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="editTindakanModalLabel{{ laporan[0] }}">Edit Tindakan</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form action="{{ url_for('edit_action', No=laporan[0]) }}" method="POST">
+                                    <div class="form-group">
+                                      <label for="tindakan{{ laporan[0] }}">Tindakan</label>
+                                      <input type="text" class="form-control" id="tindakan{{ laporan[0] }}"
+                                        name="tindakan" value="{{ laporan[5] }}">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Modal for Delete Confirmation -->
+                          <div class="modal fade" id="deleteModallaporan{{ laporan[0] }}" tabindex="-1"
+                            aria-labelledby="deleteModallaporanLabel{{ laporan[0] }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="deleteModallaporanLabel{{ laporan[0] }}">Hapus Report</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  Apakah Anda yakin ingin menghapus Report ini?
+                                </div>
+                                <div class="modal-footer">
+                                  <form action="{{ url_for('delete_laporan', No=laporan[0]) }}" method="POST">
+                                    <button type="button" class="btn btn-secondary"
+                                      data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}
+                        </tbody>
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <h4 class="card-title">Heatmap</h4>
+                      <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary btn-round ms-2" onclick="runDataJadwal()">Run Sinkron
+                          Heatmap</button>
+                        <button class="btn btn-primary btn-round ms-2" onclick="runemptyJadwal()">Run TRUNCATE
+                          Heatmap</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="basic-datatables" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center;">No</th>
+                            <th style="text-align: center;">Nama Ruangan</th>
+                            <th style="text-align: center;">Senin</th>
+                            <th style="text-align: center;">Selasa</th>
+                            <th style="text-align: center;">Rabu</th>
+                            <th style="text-align: center;">Kamis</th>
+                            <th style="text-align: center;">Jumat</th>
+                            <th style="text-align: center;">Sabtu</th>
+                            <th style="text-align: center;">Minggu</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for heatmap in heatmap %}
+                          <tr>
+                            <td style="text-align: center;">{{ heatmap[0] }}</td>
+                            <td style="text-align: center;">{{ heatmap[1] }}</td>
+                            <td style="text-align: center;">{{ heatmap[2] }}</td>
+                            <td style="text-align: center;">{{ heatmap[3] }}</td>
+                            <td style="text-align: center;">{{ heatmap[4] }}</td>
+                            <td style="text-align: center;">{{ heatmap[5] }}</td>
+                            <td style="text-align: center;">{{ heatmap[6] }}</td>
+                            <td style="text-align: center;">{{ heatmap[7] }}</td>
+                            <td style="text-align: center;">{{ heatmap[8] }}</td>
+                            <td style="text-align: center;">{{ heatmap[9] }}</td>
+
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <h4 class="card-title">kapasitas Ruangan</h4>
+                      <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary btn-round ms-2" onclick="runDataJadwal()">Run Sinkron
+                          Kapasitas Ruangan</button>
+                        <button class="btn btn-primary btn-round ms-2" onclick="runemptyJadwal()">Run TRUNCATE
+                          Kapasitas Ruangan</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="basic-datatables" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center;">No</th>
+                            <th style="text-align: center;">Fakultas</th>
+                            <th style="text-align: center;">Kode Ruangan</th>
+                            <th style="text-align: center;">Nama Ruangan</th>
+                            <th style="text-align: center;">Kapasitas</th>
+                            <th style="text-align: center;">Gedung</th>
+                            <th style="text-align: center;">Lantai</th>
+                            <th style="text-align: center;">Jenis Ruangan</th>
+                            <th style="text-align: center;">Berbagi / Tidak Berbagi</th>
+                            <th style="text-align: center;">SKS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for kapasitas in kapasitas %}
+                          <tr>
+                            <td style="text-align: center;">{{ kapasitas[0] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[1] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[2] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[3] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[4] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[5] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[6] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[7] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[8] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[9] }}</td>
+
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    FPMIPA UPI
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright">
+              2024, made with by
+              <a href="#">Hanifah</a>
+            </div>
+            <div>
+              Distributed by
+              <a target="_blank" href="">Ilmu Komputer FPMIPA UPI</a>.
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="{{ url_for('static', filename='core/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='core/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='core/bootstrap.min.js') }}"></script>
+
+    <!-- jQuery Scrollbar -->
+
+    <script src="{{ url_for('static', filename='plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+
+    <!-- Datatables -->
+    <script src="{{ url_for('static', filename='plugin/datatables/datatables.min.js') }}"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="{{ url_for('static', filename='js/kaiadmin.min.js') }}"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script>
+      $(document).ready(function () {
+        $("#basic-datatables").DataTable({});
+
+        $("#multi-filter-select").DataTable({
+          pageLength: 5,
+          initComplete: function () {
+            this.api()
+              .columns()
+              .every(function () {
+                var column = this;
+                var select = $(
+                  '<select class="form-select"><option value=""></option></select>'
+                )
+                  .appendTo($(column.footer()).empty())
+                  .on("change", function () {
+                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                    column
+                      .search(val ? "^" + val + "$" : "", true, false)
+                      .draw();
+                  });
+
+                column
+                  .data()
+                  .unique()
+                  .sort()
+                  .each(function (d, j) {
+                    select.append(
+                      '<option value="' + d + '">' + d + "</option>"
+                    );
+                  });
+              });
+          },
+        });
+
+        // Add Row
+        $("#add-row").DataTable({
+          pageLength: 5,
+        });
+
+        var action =
+          '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+
+        $("#addRowButton").click(function () {
+          $("#add-row")
+            .dataTable()
+            .fnAddData([
+              $("#addName").val(),
+              $("#addPosition").val(),
+              $("#addOffice").val(),
+              action,
+            ]);
+          $("#addRowModal").modal("hide");
+        });
+      });
+    </script>
+    <script>
+      function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+        document.getElementById('buttonGroupScroll').style.display = 'none'; // Hide button group after clicking
+      }
+    </script>
+</body>
+
+</html>

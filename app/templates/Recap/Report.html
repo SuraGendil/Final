@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Report.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+    <style>
+        /* Background color for cells with content "Terpakai" */
+        #jadwal-body td[data-content="Terpakai"] {
+            background-color: red !important;
+            color: white;
+            /* Text color for better contrast */
+            cursor: pointer;
+            /* Change cursor to pointer to indicate clickable */
+        }
+
+        /* Style for the popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            display: none;
+            /* Initially hidden */
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Style for the booking button */
+        #booking-button {
+            background-color: #4CAF50;
+            /* Warna latar hijau */
+            color: white;
+            /* Warna teks putih */
+            padding: 10px 20px;
+            /* Padding tombol */
+            border: none;
+            /* Menghapus border */
+            border-radius: 5px;
+            /* Border radius */
+            font-size: 16px;
+            /* Ukuran font */
+            cursor: pointer;
+            /* Mengubah kursor menjadi pointer saat diarahkan */
+            transition: background-color 0.3s;
+            /* Transisi untuk perubahan warna latar */
+        }
+
+
+        #booking-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Style for the WhatsApp booking button */
+        #whatsapp-button {
+            background-color: #25D366;
+            /* Warna latar hijau khas WhatsApp */
+            color: white;
+            /* Warna teks putih */
+            padding: 10px 20px;
+            /* Padding tombol */
+            border: none;
+            /* Menghapus border */
+            border-radius: 5px;
+            /* Border radius */
+            font-size: 16px;
+            /* Ukuran font */
+            cursor: pointer;
+            /* Mengubah kursor menjadi pointer saat diarahkan */
+            transition: background-color 0.3s;
+            /* Transisi untuk perubahan warna latar */
+        }
+
+        #whatsapp-button:hover {
+            background-color: #1EBE5B;
+            /* Warna latar saat tombol di-hover */
+        }
+
+        /* Styling untuk input dengan atribut list */
+        input[list] {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[list]:focus {
+            outline: none;
+            border-color: #4CAF50;
+            /* Highlight saat fokus */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========  SideBar ======= -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <!-- <ion-icon name="logo-whatsapp"></ion-icon> -->
+                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png')}}" alt="FPMIPA"
+                                class="logo-img">
+                        </span>
+                        <span class="title-brand">Jadwal <br>
+                            <b>FPMIPA UPI</b>
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/home">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/diagram">
+                        <span class="icon">
+                            <ion-icon name="duplicate-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dashboard">
+                        <span class="icon">
+                            <ion-icon name="podium-outline"></ion-icon>
+                        </span>
+                        <span class="title">Recap FPMIPA</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="darkModeToggle" onclick="toggleDarkMode()">
+                        <span class="icon">
+                            <ion-icon name="contrast-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dark Mode</span>
+                    </button>
+                </li>
+            </ul>
+            <footer>
+                <!-- Tautan Sosial Media -->
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/hanifahah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="https://github.com/HanifahAH01" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/hah_hanifah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="http://Wa.me/+6281364986912" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="hanifah al humaira#1327" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </a>
+                    <!-- Tambahkan tautan dan ikon untuk sosial media lainnya sesuai kebutuhan -->
+                </div>
+
+                <p>&copy; 2024 FPMIPA UPI. Dibuat oleh Hanifah.</p>
+            </footer>
+        </div>
+
+        <!-- ============== Main ============== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="grid-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search Here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <!-- <div class="user">
+                    <img src="assets/profile-1.jpg" alt="User">
+                </div> -->
+            </div>
+
+            <!-- ==========Details List=========== -->
+            <!-- Details -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Report Ruang Kelas</h2>
+                        <div class="btn-group">
+                            <a href="/diagram" class="btn-primary">Jadwal Kelas</a>
+                            <!-- <a href="#" class="btn-secondary">Laporan</a> -->
+                        </div>
+                    </div>
+                    <!-- Form Report Section -->
+                    <div id="report-section" class="report-section">
+                        <!-- <h2>Report Ruangan</h2> -->
+                        <form action="/submit_report" method="POST">
+                            <label for="judul">Nama Ruangan:</label>
+                            <input list="room-list" id="judul-input" name="judul" oninput="filterRooms()" required>
+                            <datalist id="room-list">
+                                {% for room in rooms %}
+                                <option value="{{ room[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
+
+                            <label for="hari">Hari:</label>
+                            <select id="hari" name="hari" required>
+                                <option value="senin">Senin</option>
+                                <option value="selasa">Selasa</option>
+                                <option value="selasa">Rabu</option>
+                                <option value="selasa">Kamis</option>
+                                <option value="selasa">Jumat</option>
+                                <option value="selasa">Sabtu</option>
+                                <option value="minggu">Minggu</option>
+                            </select>
+
+                            <label for="waktu_awal">Waktu :</label>
+                            <input list="waktu-list" id="waktu_awal" name="waktu_awal" oninput="filterWaktu()" required>
+                            <datalist id="waktu-list">
+                                {% for waktu in waktu_data %}
+                                <option value="{{ waktu[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
+                            <!-- <input type="text" id="waktu" name="waktu" required> -->
+
+                            <label for="alasan">Alasan Report:</label>
+                            <textarea id="alasan" name="alasan" required></textarea>
+
+                            <input type="submit" value="Report">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======== Script ======== -->
+        <Script src="{{ url_for('static', filename='js/Ruangkelas.js') }}"></Script>
+
+
+
+        <!-- ======== Ionicons ======== -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
